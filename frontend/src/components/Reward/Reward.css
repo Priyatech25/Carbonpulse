@@ -1,0 +1,78 @@
+.reward-page-bg {
+  background: linear-gradient(120deg, #021a1c 0%, #18323b 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.reward-glass {
+  background: rgba(20, 40, 48, 0.87);
+  box-shadow: 0 8px 36px 0 rgba(0,255,150,0.08);
+  border-radius: 32px;
+  padding: 3rem 4rem 2.7rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2.5px solid #25ed9680;
+  position: relative;
+  min-width: 380px;
+}
+
+.reward-title {
+  font-size: 2.2rem;
+  color: #25ed96;
+  text-shadow: 0 0 16px #25ed9655, 0 1px 0 #012e26;
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.reward-subtitle {
+  font-size: 1.18rem;
+  color: #9be9c8;
+  margin-bottom: 2.3rem;
+  text-align: center;
+}
+
+.badge-glow {
+  margin-bottom: 1.7rem;
+  text-align: center;
+  transition: box-shadow 0.8s;
+  border-radius: 50%;
+  box-shadow: 0 0 0 #25ed96;
+  background: transparent;
+  display: inline-block;
+}
+.badge-glow.glow {
+  box-shadow: 0 0 34px 2px #25ed96cc, 0 0 10px #2dc9e6dd;
+}
+
+.badge-text {
+  color: #25ed96;
+  margin-top: 0.8rem;
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #22f2af55;
+}
+
+.reward-desc {
+  margin-top: 2rem;
+  color: #8efce5;
+  font-size: 1.10rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .reward-glass {
+    padding: 2rem 0.5rem;
+    min-width: unset;
+    width: 98vw;
+  }
+  .reward-title {
+    font-size: 1.45rem;
+  }
+}

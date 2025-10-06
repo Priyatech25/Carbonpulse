@@ -1,0 +1,26 @@
+# main.py
+from fastapi import FastAPI
+from aiokafka import AIOKafkaProducer
+import asyncio, json
+
+app = FastAPI()
+
+loop = asyncio.get_event_loop()
+producer = AIOKafkaProducer(loop=loop, bootstrap_servers='localhost:9092')
+
+@app.on_event("startup")
+async def startup_event():
+    await producer.start()
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    await producer.stop()
+
+@app.post("/send/")
+async def send_message(source: str, value: float):
+    msg = {"source": source, "value": value, "unit": "kgCO2e"}
+    await producer.send_and_wait("emissions_topic", json.dumps(msg).encode("utf-8"))
+    return {"status": "sent", "message": msg}
+^T^Z
+
+
